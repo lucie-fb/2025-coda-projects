@@ -4,8 +4,8 @@ services:
 
     ports:
       - "80:80" # HTTP
-      - "443:443" # HTTPS
-      - "443:443/udp" # HTTP/3
+      - "444:443" # HTTPS
+      - "444:443/udp" # HTTP/3
     volumes:
       - ./app:/app/public
       - caddy_data:/data
