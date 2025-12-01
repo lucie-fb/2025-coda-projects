@@ -74,7 +74,7 @@ $artistName = $album['artist_name'];
 $artistId = $album['artist_id'];
 $albumCover = $album['album_cover'];
 
-// --- Construction de l'en-tête de l'album (classes corrigées) ---
+// --- Construction de l'en-tête de l'album
 $albumHeaderHTML = <<<HTML
 <div class="album-header">
     <img src="{$albumCover}" alt="Pochette de l'album {$albumTitle}" class="album-cover-display">
@@ -88,7 +88,7 @@ $albumHeaderHTML = <<<HTML
 HTML;
 
 
-// --- Construction de la liste des chansons (classes corrigées) ---
+// --- Construction de la liste des chansons
 $SongsHTML = "";
 foreach ($songResults as $index => $song) {
     $songName = $song['song_name'];
