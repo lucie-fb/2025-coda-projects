@@ -75,7 +75,8 @@ try {
     SELECT 
         a.cover as album_cover, 
         a.name as album_name,
-        a.release_date as album_release_date
+        a.release_date as album_release_date,
+        a.id as album_id
     FROM album a
     WHERE a.artist_id = :artist_id
     ORDER BY release_date DESC
@@ -172,9 +173,10 @@ if (!empty($Artistalbum)) {
         $albumCover = $album['album_cover'];
         $albumName = $album['album_name'];
         $albumReleaseDate = $album['album_release_date'];
+        $albumId = $album['album_id'];
 
         $albumsHTML .= <<<HTML
-            <a href="album.php?id=..." class="album-card">
+            <a href="album.php?id=$albumId" class="album-card">
                 <img src="$albumCover" class="album-cover" alt="Album $albumName">
                 <p class="album-name">$albumName</p>
                 <p>$albumReleaseDate</p>
