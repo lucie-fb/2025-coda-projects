@@ -108,7 +108,7 @@ foreach ($songResults as $index => $song) {
 HTML;
 }
 
-// --- Construction du HTML final (classes corrigées) ---
+// --- Construction du HTML final 
 $html = <<<HTML
 <style>
     /* 🎨 Variables de Thème (Thème Sombre Moderne) */
