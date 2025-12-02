@@ -15,7 +15,7 @@ try {
     exit;
 }
 
-// --- Définition de la fonction de conversion ---
+// Définition de la fonction de conversion ---
 function conversion($listeners)
 {
     if ($listeners >= 1000000) {
@@ -38,7 +38,7 @@ $topAlbumsBySongNote = []; // NOUVEAU: Variable pour le Top Albums (trié par no
 $albumHeaderHTML = ""; // Contenu pour l'Album du moment
 
 try {
-    // 1. Récupération du Top 5 des artistes (pour la grille 'Top trending')
+    // Récupération du Top 5 des artistes (pour la grille 'Top trending')
     $allArtists = $db->executeQuery(<<<SQL
     SELECT 
         id,
@@ -50,7 +50,7 @@ try {
     LIMIT 5
 SQL);
 
-    // 2a. Récupération du Top 5 des albums par date (pour la grille 'Top albums')
+    // Récupération du Top 5 des albums par date (pour la grille 'Top albums')
     $topAlbums = $db->executeQuery(<<<SQL
         SELECT 
             a.id,
@@ -64,7 +64,7 @@ SQL);
         LIMIT 5
     SQL);
 
-    // 2b. NOUVEAU: Récupération des 5 albums les mieux notés via la moyenne des chansons (pour 'Top sorties')
+    // Récupération des 5 albums les mieux notés via la moyenne des chansons (pour 'Top sorties')
     $topAlbumsBySongNote = $db->executeQuery(<<<SQL
         SELECT 
             a.id,
@@ -80,7 +80,7 @@ SQL);
     SQL);
 
 
-    // 3. Récupération des détails d'un Album spécifique si un ID est fourni
+    // Récupération des détails d'un Album spécifique si un ID est fourni
     if ($albumId !== 0) {
         $albumData = $db->executeQuery(<<<SQL
             SELECT 
